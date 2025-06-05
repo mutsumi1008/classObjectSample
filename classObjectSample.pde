@@ -12,7 +12,7 @@ void setup() {
   //クラスオブジェクトの動的配列関連の処理
   co = new ArrayList<circleObject>();
   for ( int i = 0; i< eNum; i++ ) {
-    //設定した初期値の分だけ、クラスオブジェクトを作成 ＆ 配列に格納
+    //設定した初期値の分だけ、クラスオブジェクトを作成 ＆ 配列に追加
     co.add( new circleObject());
     // new circleObject() で、クラスcircleObjectのインスタンスを作成している
     //クラスのコンストラクタで位置とか移動方向とかをランダムに決定している
