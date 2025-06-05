@@ -43,6 +43,8 @@ void mousePressed() {
 class circleObject {
   int initMargin=50;//初期配置の際、描画領域に対して設定する隙間（マージン）
   float eSize = 10.0;//円の大きさ。
+  float velSize = 0.2;//移動量
+  float ang;//移動方向を角度で
   PVector pos, vel;
   color col;
   circleObject() {
@@ -51,9 +53,9 @@ class circleObject {
     //変数の初期化が主な任務
 
     pos =new PVector(random(initMargin, width-initMargin), random( initMargin, height-initMargin));
-    float ang = random(0, 2.0*PI);//移動方向（角度）を、ランダムに、かつ、ラジアンで決定
-    vel = new PVector( cos( ang ), sin(ang));//昔懐かし（？）三角関数。これで、角度に対応したx、y方向の移動量になる。なるのですｌ
-    vel.mult( 0.2 );//移動方向の大きさを1から0.2に変更（ベクトルのｘ、ｙ成分を0.2倍）。1のままだと速すぎるから
+    ang = random(0, 2.0*PI);//移動方向（角度）を、ランダムに、かつ、ラジアンで決定
+    vel = new PVector( cos( ang ), sin(ang));//昔懐かし（？）三角関数。これで、角度に対応したx、y方向の移動量になる。なるのです。ちなみに、この段階ではベクトルvelの大きさは1（単位ベクトル）ｌ
+    vel.mult(velSize);//移動方向の大きさを1からvelSizeに変更（ベクトルのｘ、ｙ成分をvelSize倍）。1のままだと速すぎる。と、思う。
     col = color( random(360), random(30, 70), random( 30, 70), random(0.1, 10) );//それぞれの円の塗り色をランダムに決定
   }
 
