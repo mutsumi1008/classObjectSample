@@ -1,4 +1,4 @@
-int eNum = 10000;//作成、描画する円の数(初期値）
+int eNum = 50;//作成、描画する円の数(初期値）
 
 ArrayList<circleObject> co;//クラスオブジェクトの動的配列 co を宣言
 
